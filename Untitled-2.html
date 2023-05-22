@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Declaração de Imposto de Renda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: black;
+      color: white;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+      height: 100px;
+    }
+
+    button[type="submit"] {
+      background-color: #FFBF00;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #FFA500;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 style="color: #FFBF00;">Declaração de Imposto de Renda</h2>
+    <form id="formulario">
+      <div class="form-group">
+        <label for="nome">Qual é o seu nome?</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+
+      <div class="form-group">
+        <label for="contato">Qual o seu WhatsApp ou e-mail? Responda com a forma de contato que preferir utilizar</label>
+        <input type="text" id="contato" name="contato" required>
+      </div>
+
+      <div class="form-group">
+        <label for="primeira-declaracao">É a sua primeira declaração de Imposto de Renda?</label>
+        <select id="primeira-declaracao" name="primeira-declaracao" required>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="declaracao-anterior">Já declarou Imposto de Renda com o nosso escritório? (L Lopes Serviços Contábeis e Financeiros)</label>
+        <select id="declaracao-anterior" name="declaracao-anterior" required>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+
+      <p class="attention">ATENÇÃO!<br>EM CASO POSITIVO PARA A PERGUNTA ANTERIOR, AGUARDE O CONTATO DA NOSSA EQUIPE, NÃO É NECESSÁRIO O PREENCHIMENTO DESSE FORMULÁRIO!</p>
+
+      <div class="form-group">
+        <label for="tipo-renda">Você é CLT (recebe salário) ou tem uma empresa?</label>
+        <select id="tipo-renda" name="tipo-renda" required>
+          <option value="clt">CLT</option>
+          <option value="empresario">EMPRESÁRIO</option>
+          <option value="clt-empresario">CLT E EMPRESÁRIO</option>
+          <option value="outros">OUTROS</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="empresa-mei">Sua empresa é MEI?</label>
+        <select id="empresa-mei" name="empresa-mei" required>
+          <option value="nao-se-aplica">Não se Aplica (Não tenho empresa)</option>
+          <option value="sim">Sim, é MEI</option>
+          <option value="nao">Não (Simples Nacional ou outros)</option>
+          <option value="nao-sei">Não Sei</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="faturamento-mei">Caso MEI, qual o faturamento total em 2022? (Com ou sem Notas Fiscais)</label>
+        <input type="text" id="faturamento-mei" name="faturamento-mei">
+      </div>
+
+      <div class="form-group">
+        <label for="heranca">Recebeu herança no ano passado?</label>
+        <select id="heranca" name="heranca" required>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="venda-veiculo-imovel">Vendeu veículo ou imóvel no ano passado?</label>
+        <select id="venda-veiculo-imovel" name="venda-veiculo-imovel" required>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="investimento">Você investiu no ano passado? (Considere ações, FIIs, ETFs)</label>
+        <select id="investimento" name="investimento" required>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="ano-investimento">Em que ano começou a investir? Declara Imposto de Renda desde o início dos investimentos?</label>
+        <input type="text" id="ano-investimento" name="ano-investimento">
+      </div>
+
+      <div class="form-group">
+        <label for="ativos-carteira">Quantos ativos possui em carteira, aproximadamente?</label>
+        <input type="text" id="ativos-carteira" name="ativos-carteira">
+      </div>
+
+      <div class="form-group">
+        <label for="day-trade">Efetuou operações de Day Trade?</label>
+        <select id="day-trade" name="day-trade" required>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="criptoativos">Possui Criptoativos?</label>
+        <select id="criptoativos" name="criptoativos" required>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="outras-informacoes">Outras informações relevantes:</label>
+        <textarea id="outras-informacoes" name="outras-informacoes"></textarea>
+      </div>
+
+      <div class="form-group">
+        <button type="submit">Enviar Declaração</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('formulario');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nome = document.getElementById('nome').value;
+      const contato = document.getElementById('contato').value;
+      const primeiraDeclaracao = document.getElementById('primeira-declaracao').value;
+      const declaracaoAnterior = document.getElementById('declaracao-anterior').value;
+      const tipoRenda = document.getElementById('tipo-renda').value;
+      const empresaMEI = document.getElementById('empresa-mei').value;
+      const faturamentoMEI = document.getElementById('faturamento-mei').value;
+      const heranca = document.getElementById('heranca').value;
+      const vendaVeiculoImovel = document.getElementById('venda-veiculo-imovel').value;
+      const investimento = document.getElementById('investimento').value;
+      const anoInvestimento = document.getElementById('ano-investimento').value;
+      const ativosCarteira = document.getElementById('ativos-carteira').value;
+      const dayTrade = document.getElementById('day-trade').value;
+      const criptoativos = document.getElementById('criptoativos').value;
+      const outrasInformacoes = document.getElementById('outras-informacoes').value;
+
+      const message = `
+        Declaração de Imposto de Renda:
+
+        Nome: ${nome}
+        Contato: ${contato}
+        Primeira Declaração: ${primeiraDeclaracao}
+        Declaração Anterior: ${declaracaoAnterior}
+        Tipo de Renda: ${tipoRenda}
+        Empresa MEI: ${empresaMEI}
+        Faturamento MEI: ${faturamentoMEI}
+        Recebeu Herança: ${heranca}
+        Vendeu Veículo ou Imóvel: ${vendaVeiculoImovel}
+        Investimento: ${investimento}
+        Ano de Início dos Investimentos: ${anoInvestimento}
+        Ativos em Carteira: ${ativosCarteira}
+        Operações de Day Trade: ${dayTrade}
+        Possui Criptoativos: ${criptoativos}
+        Outras Informações: ${outrasInformacoes}
+      `;
+
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=5518988125531&text=${encodeURIComponent(message)}`;
+
+      window.open(whatsappUrl, '_blank');
+    });
+  </script>
+</body>
+</html>
